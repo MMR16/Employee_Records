@@ -1,0 +1,23 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }
+  a{
+    font-size: large;
+  }
+  a:visited,a:link {
+    color: blue;
+  }
+  a:hover{
+    color: rgb(100, 200, 13);
+  }
+  a:active{
+    color: #ff0000;
+  }

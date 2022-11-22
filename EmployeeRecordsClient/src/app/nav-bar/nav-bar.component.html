@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>supervised_user_circle</mat-icon>
+        </button>
+    </a>
+    <span>Employee Records</span>
+
+    <span class="example-spacer"></span>
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <button mat-raised-button color="accent">Home</button>
+    </a>
+    <button mat-raised-button color="warn" (click)="openDialog()">Add Employee</button>
+
+    <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button> -->
+</mat-toolbar>

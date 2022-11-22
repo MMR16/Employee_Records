@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Add Employee</h1>
+<br>
+<div mat-dialog-content>
+    <form [formGroup]="employeeForm">
+        <input *ngIf="editEmp" hidden formControlName="id" id="id" matInput>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="please Enter Employee Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>adress</mat-label>
+            <input formControlName="adress" matInput placeholder="please Enter Employee adress">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>date Of Birth</mat-label>
+            <input formControlName="dateOfBirth" matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Department</mat-label>
+            <mat-select formControlName="departmentId" placeholder="Departnemt" [(value)]="departmentId">
+                <!-- <mat-option *ngIf="editEmp" [value]="editEmp.departmentId"></mat-option> -->
+                <mat-option *ngFor="let item of departmentModel" [value]="item.id">{{item.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </form>
+    <div mat-dialog-actions [align]="'end'">
+        <button mat-raised-button color="primary" (click)="addEmployee()">{{actionBtn}}</button>
+        <button mat-raised-button clolor="warn" mat-dialog-close="">Close</button>
+    </div>
+    <!-- <h1>
+        {{departmentModel|json}}
+    </h1> -->
+    <!-- <h1> ddd {{departmentId}}</h1> -->
+    <!-- <h1>{{selected|json}}</h1> -->
+</div>
